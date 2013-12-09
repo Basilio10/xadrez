@@ -1,15 +1,19 @@
 package br.edu.ifes.poo2.xadrez.factory.jogador;
 
+import br.edu.ifes.poo2.xadrez.factory.peca.Color;
+
 public class JogadorHumano implements Jogador {
 
+	private Color color;
 	public int getPontuação() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	public int getColor() {
+	public Color getColor() {
 		// TODO Auto-generated method stub
-		return 0;
+		return color;
 	}
+
 
 }

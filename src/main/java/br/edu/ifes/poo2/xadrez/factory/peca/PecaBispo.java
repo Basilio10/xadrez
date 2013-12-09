@@ -1,9 +1,14 @@
 package br.edu.ifes.poo2.xadrez.factory.peca;
 
-public class PecaBispo implements Peca {
+public class PecaBispo extends AbstractPeca {
 	
 	private Color color;
 	private final int value=3;
+	
+	public Peca create()
+	{
+		return (Peca) this.clone();
+	}
 	
 	public PecaBispo(Color color)
 	{
@@ -31,5 +36,12 @@ public class PecaBispo implements Peca {
 	public int getValue() {
 		return value;
 	}
-
+	@Override
+	public String toString()
+	{
+		
+		String b[] = this.getClass().getName().split("\\.");
+		
+		return String.format("%s",b[b.length-1]);
+	}
 }

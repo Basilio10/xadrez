@@ -1,46 +1,32 @@
 package br.edu.ifes.poo2.xadrez.factory.peca;
 
+
+import java.util.List;
+
+
+
 public class FactoryPecaBranca extends AbstractFactoryPeca {
 
 	@Override
-	public Peca criarPeca(TipoPeca tipoPeca) {
-		if(tipoPeca.equals(TipoPeca.peao))
-		{
-			return new PecaPeao(Color.branca);
-		}
-		else
-		{
-			if(tipoPeca.equals(TipoPeca.torre))
-			{
-				return new PecaTorre(Color.branca);
-			}
-			else
-			{
-				if(tipoPeca.equals(TipoPeca.cavalo))
-				{
-					return new PecaCavalo(Color.branca);
-				}
-				else
-				{
-					if(tipoPeca.equals(TipoPeca.bispo))
-					{
-						return new PecaBispo(Color.branca);
-					}
-					else
-					{
-						if(tipoPeca.equals(TipoPeca.rainha))
-						{
-							return new PecaRainha(Color.branca);
-						}
-						else
-						{
-							return new PecaRei(Color.branca);
-						}
-					}
-				}
-			}
-		}
+	public void criarPeca(List<Peca> peca) {
+		
+		
+		peao = new PecaPeao(Color.BRANCO);
+		bispo = new PecaBispo(Color.BRANCO);
+		cavalo = new PecaCavalo(Color.BRANCO);
+		rainha = new PecaRainha(Color.BRANCO);
+		rei = new PecaRei(Color.BRANCO);
+		torre = new PecaTorre(Color.BRANCO);
+		
+		peca.add(peao);
+		peca.add(torre);
+		peca.add(bispo);
+		peca.add(cavalo);
+		peca.add(rainha);
+		peca.add(rei);
+		
 	}
+
 
 
 }

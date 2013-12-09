@@ -1,9 +1,15 @@
 package br.edu.ifes.poo2.xadrez.factory.peca;
 
-public class PecaTorre implements Peca {
+public class PecaTorre extends AbstractPeca {
 
 	private Color color;
 	private final int value=5;
+	
+	public Peca create()
+	{
+		return (Peca) this.clone();
+	}
+	
 	
 	public PecaTorre(Color color)
 	{
@@ -31,5 +37,10 @@ public class PecaTorre implements Peca {
 	public int getValue() {
 		return value;
 	}
-
+	@Override
+	public String toString()
+	{
+		String b[] = this.getClass().getName().split("\\.");
+		return String.format("%s",b[b.length-1]);
+	}
 }

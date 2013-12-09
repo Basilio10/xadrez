@@ -1,10 +1,14 @@
 package br.edu.ifes.poo2.xadrez.factory.peca;
 
-public class PecaRei implements Peca {
+public class PecaRei extends AbstractPeca {
 
 	private Color color;
-	private final int value=100;//e ai fazer o que?
+	private final int value=100;
 	
+	public Peca create()
+	{
+		return (Peca) this.clone();
+	}
 	
 	public PecaRei(Color color)
 	{
@@ -29,5 +33,12 @@ public class PecaRei implements Peca {
 	private void setColor(Color color) {
 		this.color = color;
 	}
-
+	@Override
+	public String toString()
+	{
+		
+		String b[] = this.getClass().getName().split("\\.");
+		
+		return String.format("%s",b[b.length-1]);
+	}
 }
